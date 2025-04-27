@@ -1,7 +1,11 @@
+import { UserContext } from "@/context/UserContext";
 import { Redirect } from "expo-router";
-import { Text, View } from "react-native";
+import { useContext } from "react";
+import { View } from "react-native";
 
 export default function Index() {
+  const { user, setUser } = useContext(UserContext);
+
   return (
     <View
       style={{
@@ -11,15 +15,6 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text
-        style={{
-          fontFamily: "mBold",
-          fontSize: 50,
-        }}
-      >
-        Hello, I am Nilanchala Panda
-      </Text>
-
       <Redirect href={"/Landing"} />
     </View>
   );

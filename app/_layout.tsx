@@ -1,5 +1,7 @@
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
+import { UserContext } from "@/context/UserContext";
+import { useContext } from "react";
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
@@ -10,19 +12,21 @@ export default function RootLayout() {
   });
 
   return (
-    <Stack>
-      <Stack.Screen
-        name="Landing"
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="(tabs)"
-        options={{
-          headerShown: false,
-        }}
-      />
-    </Stack>
+    <UserContext.Provider value={{  }}>
+      <Stack>
+        <Stack.Screen
+          name="Landing"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="(tabs)"
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack>
+    </UserContext.Provider>
   );
 }

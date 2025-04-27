@@ -31,9 +31,10 @@ export default function CreateRecipe() {
 const styles = StyleSheet.create({
   container: {
     marginTop: 10,
-    padding: 10,
+    paddingHorizontal: 12,
+    paddingBottom: 14,
     backgroundColor: Colors.SECONDARY,
-    borderRadius: 22,
+    borderRadius: 16,
     display: "flex",
     alignItems: "center",
   },
